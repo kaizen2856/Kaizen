@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSpark | Digital Security Specialist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-green: #00ff9c;
+      --cyber-blue: #00ccff;
+      --matrix-green: #00ff41;
+      --terminal-black: #0a0a0a;
+    }
+    
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: var(--terminal-black);
+      color: var(--neon-green);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    .hacker-font {
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .cyber-glow {
+      text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+    }
+    
+    .cyber-border {
+      border: 1px solid var(--neon-green);
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    .terminal-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 20px;
+      background-color: var(--neon-green);
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    
+    .neon-effect {
+      transition: all 0.3s ease;
+    }
+    
+    .neon-effect:hover {
+      text-shadow: 0 0 10px var(--neon-green);
+      transform: translateY(-3px);
+    }
+    
+    .matrix-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-black text-gray-100">
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix" class="matrix-rain"></canvas>
+  
+  <!-- Main Header Section -->
+  <header class="py-12 px-4 sm:px-8 lg:px-16 border-b border-green-900">
+    <div class="container mx-auto max-w-4xl flex flex-col md:flex-row items-center">
+      <div class="relative mb-8 md:mb-0">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden cyber-border relative">
+          <img src="https://placehold.co/400x400" alt="CyberSpark profile image showing a hacker with neon green lighting" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+        </div>
+        <div class="absolute -bottom-3 -right-3 w-8 h-8 rounded-full bg-green-500 animate-pulse"></div>
+      </div>
+      
+      <div class="md:ml-10 text-center md:text-left">
+        <h1 class="hacker-font text-3xl sm:text-4xl md:text-5xl font-bold mb-2 cyber-glow">
+          <span class="text-white">CYBER</span><span class="text-green-400">SPARK</span>
+        </h1>
+        <div class="flex justify-center md:justify-start items-center">
+          <div class="terminal-line">
+            <p class="inline text-green-300">Digital Security Specialist >>_</p>
+            <span class="terminal-cursor ml-1"></span>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-center md:justify-start space-x-3">
+          <button id="consoleBtn" class="px-4 py-2 bg-green-900 hover:bg-green-800 rounded-md neon-effect">
+            Launch Console
+          </button>
+          <button id="contactBtn" class="px-4 py-2 border border-green-400 hover:bg-green-900 rounded-md neon-effect">
+            Direct Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-gray-900 shadow-lg">
+    <div class="container mx-auto px-4 py-3">
+      <ul class="flex justify-center space-x-6 md:space-x-10">
+        <li><a href="#about" class="hover:text-green-400 neon-effect">/about</a></li>
+        <li><a href="#skills" class="hover:text-green-400 neon-effect">/skills</a></li>
+        <li><a href="#projects" class="hover:text-green-400 neon-effect">/projects</a></li>
+        <li><a href="#contact" class="hover:text-green-400 neon-effect">/contact</a></li>
+        <li><a href="#team" class="hover:text-green-400 neon-effect">/team</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- About Section -->
+    <section id="about" class="mb-16">
+      <h2 class="hacker-font text-2xl sm:text-3xl font-bold mb-6 cyber-glow pb-2 border-b border-green-900">
+        <span class="text-green-400">>_</span> ABOUT_ME
+      </h2>
+      <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border">
+        <p class="mb-4 leading-relaxed">
+          I'm a 16-year-old cybersecurity enthusiast specializing in ethical hacking, penetration testing, and digital forensics. My journey began when I discovered Termux automation and now I build real-world cybersecurity tools with practical applications.
+        </p>
+        <p class="leading-relaxed">
+          Currently balancing IIT preparation with my ambitions in professional gaming, I bring a unique perspective to problem-solving that combines analytical thinking with creative execution. My specialty lies in mobile-based security solutions and open-source intelligence gathering.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="mb-16">
+      <h2 class="hacker-font text-2xl sm:text-3xl font-bold mb-6 cyber-glow pb-2 border-b border-green-900">
+        <span class="text-green-400">>_</span> SKILLS_EXPERTISE
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border">
+          <h3 class="text-green-400 font-semibold mb-3">Security Specializations</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>Phishing detection & mitigation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>Network penetration testing</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>OSINT & digital footprint analysis</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>SIM & IMEI forensics</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border">
+          <h3 class="text-green-400 font-semibold mb-3">Technical Proficiencies</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>Termux automation scripting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>Python exploit development</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>Mobile security frameworks</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">▷</span>
+              <span>Social media API manipulation</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="mb-16">
+      <h2 class="hacker-font text-2xl sm:text-3xl font-bold mb-6 cyber-glow pb-2 border-b border-green-900">
+        <span class="text-green-400">>_</span> PROJECTS_WORK
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Project 1 -->
+        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border neon-effect hover:shadow-lg hover:shadow-green-500/10 transition-all">
+          <h3 class="text-green-400 font-semibold mb-3">PHISHNET Detector</h3>
+          <p class="text-sm text-gray-300 mb-3">Mobile phishing detection system</p>
+          <p class="mb-4">An AI-powered tool that analyzes URLs in real-time to detect phishing attempts, specifically optimized for mobile browsers and Termux environment.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-green-900 rounded-full text-xs">Python</span>
+            <span class="px-3 py-1 bg-green-900 rounded-full text-xs">Termux</span>
+            <span class="px-3 py-1 bg-green-900 rounded-full text-xs">ML</span>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border neon-effect hover:shadow-lg hover:shadow-green-500/10 transition-all">
+          <h3 class="text-green-400 font-semibold mb-3">QUANTUM Track</h3>
+          <p class="text-sm text-gray-300 mb-3">Advanced OSINT toolkit</p>
+          <p class="mb-4">A comprehensive open-source intelligence platform that aggregates data from multiple sources to track digital footprints and connections.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-green-900 rounded-full text-xs">Bash</span>
+            <span class="px-3 py-1 bg-green-900 rounded-full text-xs">Python</span>
+            <span class="px-3 py-1 bg-green-900 rounded-full text-xs">API</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="mb-16">
+      <h2 class="hacker-font text-2xl sm:text-3xl font-bold mb-6 cyber-glow pb-2 border-b border-green-900">
+        <span class="text-green-400">>_</span> QUANTUM_NETWORK
+      </h2>
+      <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border">
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold text-green-400 mb-3">Our Collective</h3>
+          <p class="mb-4">
+            Quantum Network is a team of cybersecurity researchers and ethical hackers focused on developing open-source security tools and sharing knowledge.
+          </p>
+          <div class="flex items-center space-x-4 mt-4">
+            <a href="https://t.me/Quantum_not_for_everyone" target="_blank" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md flex items-center neon-effect">
+              <span class="mr-2">🔗</span>
+              Official Channel
+            </a>
+            <a href="https://t.me/Quantum_Discussion_group" target="_blank" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md flex items-center neon-effect">
+              <span class="mr-2">💬</span>
+              Discussion Group
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="hacker-font text-2xl sm:text-3xl font-bold mb-6 cyber-glow pb-2 border-b border-green-900">
+        <span class="text-green-400">>_</span> CONTACT_ME
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border">
+          <h3 class="text-green-400 font-semibold mb-4">Direct Links</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="w-8 h-8 rounded-full bg-green-900 flex items-center justify-center mr-3">📡</span>
+              <a href="https://t.me/II_onlyZerox_II" target="_blank" class="hover:text-green-400 neon-effect">@II_onlyZerox_II</a>
+            </li>
+            <li class="flex items-center">
+              <span class="w-8 h-8 rounded-full bg-green-900 flex items-center justify-center mr-3">📱</span>
+              <a href="https://wa.me/27731427857" target="_blank" class="hover:text-green-400 neon-effect">+27 73 142 7857</a>
+            </li>
+            <li class="flex items-center">
+              <span class="w-8 h-8 rounded-full bg-green-900 flex items-center justify-center mr-3">📷</span>
+              <a href="https://www.instagram.com/_onlyspark_?igsh=MXNiMWRtMmJnYzd2NA==" target="_blank" class="hover:text-green-400 neon-effect">@_onlyspark_</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg cyber-border">
+          <h3 class="text-green-400 font-semibold mb-4">Send Message</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm mb-1">Your Name</label>
+              <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500">
+            </div>
+            <div>
+              <label for="email" class="block text-sm mb-1">Email</label>
+              <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500">
+            </div>
+            <div>
+              <label for="message" class="block text-sm mb-1">Message</label>
+              <textarea id="message" rows="3" class="w-full bg-gray-800 border border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500"></textarea>
+            </div>
+            <button type="submit" class="w-full py-2 bg-green-700 hover:bg-green-600 rounded-md neon-effect">
+              Send Encrypted Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="border-t border-green-900 py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-grayAccording-400 mb-2 text-sm">
+        "The quieter you become, the more you are able to hear."
+      </p>
+      <p class="text-xs text-gray-500">
+        &copy; 2023 CYBERSPARK - Ethical Hacking Portfolio | All systems secure
+      </p>
+      <div class="mt-4 flex justify-center space-x-2">
+        <a href="#" class="text-gray-400 hover:textGreen-400 neon-effect">
+          <span class="sr-only">Twitter</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">Twitter SVG icon here</svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-green-400 neon-effect">
+          <span class="sr-only">GitHub</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">GitHub SVG icon here</svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const nums = '0123456789';
+    const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+    
+    const alphabet = katakana + latin + nums + symbols;
+    
+    const fontSize = 16;
+    const columns = canvas.width/fontSize;
+    
+    const rainDrops = [];
+    
+    for(let x = 0; x < columns; x++) {
+      rainDrops[x] = 1;
+    }
+    
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+      
+      for(let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+        
+        if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+      }
+    };
+    
+    setInterval(draw, 30);
+    
+    // Theme toggle functionality
+    const themeToggle = document.createElement('button');
+    themeToggle.textContent = '❖';
+    themeToggle.className = 'fixed bottom-4 right-4 w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-green-400 text-xl z-50 hover:bg-gray-700';
+    themeToggle.title = 'Toggle theme';
+    document.body.appendChild(themeToggle);
+    
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+    
+    // Console simulation
+    const consoleBtn = document.getElementById('consoleBtn');
+    const contactBtn = document.getElementById('contactBtn');
+    
+    consoleBtn.addEventListener('click', () => {
+      alert('[SYSTEM] Console access restricted to authorized personnel only.');
+    });
+    
+    contactBtn.addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
